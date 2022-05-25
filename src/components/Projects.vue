@@ -2,10 +2,26 @@
   <div class="content">
     <h3>Projects</h3>
     <div class="cards">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        :projectImg="project1.projectImg"
+        :projectTitle="project1.projectTitle"
+        :projectDescription="project1.projectDescription"
+      />
+      <Card
+        :projectImg="project2.projectImg"
+        :projectTitle="project2.projectTitle"
+        :projectDescription="project2.projectDescription"
+      />
+      <Card
+        :projectImg="project3.projectImg"
+        :projectTitle="project3.projectTitle"
+        :projectDescription="project3.projectDescription"
+      />
+      <!-- <Card
+        :projectImg="project1.projectImg"
+        :projectTitle="project1.projectTitle"
+        :projectDescription="project1.projectDescription"
+      /> -->
     </div>
     <div class="see-projects">
       <button>SEE ALL PROJECTS</button>
@@ -19,6 +35,28 @@ import Card from "../components/Card.vue";
 export default {
   components: {
     Card,
+  },
+  data: () => {
+    return {
+      project1: {
+        projectImg: require("../assets/starbucks.jpg"),
+        projectTitle: "StarBucks Clone",
+        projectDescription:
+          "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      },
+      project2: {
+        projectImg: require("../assets/cocacola.jpg"),
+        projectTitle: "CocaCola Clone",
+        projectDescription:
+          "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      },
+      project3: {
+        projectImg: require("../assets/Pepsi.jpg"),
+        projectTitle: "Pepsi Clone",
+        projectDescription:
+          "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      },
+    };
   },
 };
 </script>

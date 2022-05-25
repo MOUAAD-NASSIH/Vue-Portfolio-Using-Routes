@@ -1,12 +1,14 @@
 <template>
   <div class="box">
-    <img src="../assets/skillsIcons/JavaScript-icon.svg" />
-    <h3>JavaScript</h3>
+    <img :src="imgIcon" />
+    <h3>{{ imgTitle }}</h3>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["imgIcon", "imgTitle"],
+};
 </script>
 
 <style scoped>
@@ -15,11 +17,14 @@ export default {};
 }
 
 .box img {
-  max-width: 100px;
+  cursor: pointer;
+  min-height: 100px;
+  max-width: 90px;
 }
 
 .box h3 {
   font-weight: 300;
+  cursor: pointer;
   font-size: 1rem;
   color: #fff;
   line-height: 50px;

@@ -1,9 +1,15 @@
 <template>
-  <button>vue.js</button>
+  <div class="tech-used-in">
+    <button>{{ tech1 }}</button>
+    <button>{{ tech2 }}</button>
+    <button>{{ tech3 }}</button>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["tech1", "tech2", "tech3"],
+};
 </script>
 
 <style scoped>
@@ -20,4 +26,5 @@ button {
   margin-right: 10px;
   cursor: pointer;
 }
+
 </style>

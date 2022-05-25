@@ -1,19 +1,19 @@
 <template>
   <div class="card">
     <div class="card-img">
-      <img src="../assets/project-img.svg" alt="" />
+      <img :src="projectImg" />
     </div>
     <div class="card-info">
-      <h3 class="card-title">I N S I G H T G R A M</h3>
+      <h3 class="card-title">{{ projectTitle }}</h3>
       <div class="tech-used">
-        <TechUsed />
-        <TechUsed />
-        <TechUsed />
+        <TechUsed
+          :tech1="technologies.tech1"
+          :tech2="technologies.tech2"
+          :tech3="technologies.tech3"
+        />
       </div>
       <p>
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit. Exercitation
-        veniam consequat sunt nostrud amet.
+        {{ projectDescription }}
       </p>
     </div>
   </div>
@@ -25,6 +25,17 @@ import TechUsed from "../components/TechUsed.vue";
 export default {
   components: {
     TechUsed,
+  },
+  props: ["projectImg", "projectTitle", "projectDescription"],
+
+  data: () => {
+    return {
+      technologies: {
+        tech1: "Html",
+        tech2: "Css",
+        tech3: "JavaScript",
+      },
+    };
   },
 };
 </script>
@@ -43,7 +54,9 @@ export default {
 
 .card-img img {
   max-width: 100%;
+  max-height: 375px;
   padding-bottom: 25px;
+  cursor: pointer;
 }
 
 .card-info {

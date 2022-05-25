@@ -6,9 +6,11 @@
     <div class="card-info">
       <h3 class="card-title">{{ post.author }}</h3>
       <div class="tech-used">
-        <TechUsed />
-        <TechUsed />
-        <TechUsed />
+        <TechUsed
+          :tech1="technologies.tech1"
+          :tech2="technologies.tech2"
+          :tech3="technologies.tech3"
+        />
       </div>
       <p>
         {{ post.content }}
@@ -26,6 +28,15 @@ export default {
   },
   components: {
     TechUsed,
+  },
+  data: () => {
+    return {
+      technologies: {
+        tech1: "Html",
+        tech2: "Css",
+        tech3: "JavaScript",
+      },
+    };
   },
 };
 </script>

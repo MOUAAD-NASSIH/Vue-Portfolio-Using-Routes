@@ -31,6 +31,10 @@ const routes = [
     path: "/home",
     redirect: "/",
   },
+  {
+    path: "/me",
+    redirect: "/contact",
+  },
 
   // catch all 404:
   {
