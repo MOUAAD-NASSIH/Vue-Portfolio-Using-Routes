@@ -1,6 +1,10 @@
 <template>
-  <div class="content">
-    <img src="../assets/down-arrow.svg" alt="" />
+  <div class="flex justify-center">
+    <!-- implicit style (fas is assumed) -->
+    <font-awesome-icon
+      icon="arrow-down"
+      class="text-3xl text-[#00d9f5] dark:text-[#00f59fbb]"
+    />
   </div>
 </template>
 
@@ -8,13 +12,4 @@
 export default {};
 </script>
 
-<style scoped>
-.content {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.content img {
-  margin: 20px 0;
-}
-</style>
+<style scoped></style>

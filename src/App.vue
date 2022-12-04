@@ -1,25 +1,41 @@
 <template>
-  <div class="container">
-    <nav class="header">
-      <div class="home-router">
-        <router-link to="/">Home</router-link>
+  <div class="" :class="darkmode ? 'dark' : ''">
+    <div class="bg-[#effefe] dark:bg-[#041f31]">
+      <div class="containerr">
+        <nav class="header">
+          <div
+            class="home-router font-[400] md:font-bold text-lg md:text-xl md:text-black dark:text-white"
+          >
+            <router-link to="/" class="">Home</router-link>
+          </div>
+          <div
+            class="nav-links font-[400] md:font-bold text-lg md:text-xl text-black dark:text-white"
+          >
+            <router-link class="projects-router" :to="{ name: 'projects' }"
+              >Projects</router-link
+            >
+            <router-link class="contact-router" :to="{ name: 'contact' }"
+              >Contact</router-link
+            >
+            <img
+              @click="toggleDark"
+              class="night-light cursor-pointer h-[24px] md:h-[37px]"
+              src="./assets/night-light.png"
+            />
+          </div>
+        </nav>
+        <router-view />
       </div>
-      <div class="nav-links">
-        <router-link class="projects-router" :to="{ name: 'projects' }"
-          >Projects</router-link
-        >
-        <router-link class="contact-router" :to="{ name: 'contact' }"
-          >Contact</router-link
-        >
-        <img class="night-light" src="./assets/night-light.png" />
-      </div>
-    </nav>
-    <router-view />
+    </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+const darkmode = ref(false);
+const toggleDark = function () {
+  darkmode.value = !darkmode.value;
+};
 </script>
 
 <style>
@@ -31,18 +47,19 @@ export default {};
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
+/* 
 :root {
   --main-bg-color: #041f31;
 }
 
 body {
   background: var(--main-bg-color);
-}
+} */
 
-.container {
+.containerr {
   width: 80%;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .header {
@@ -55,10 +72,7 @@ body {
 }
 
 .home-router a {
-  font-weight: 400;
   text-decoration: none;
-  color: #fff;
-  font-size: 1.125rem;
   padding: 10px 20px;
 }
 
@@ -69,10 +83,7 @@ body {
 }
 
 .nav-links a {
-  font-weight: 400;
   text-decoration: none;
-  color: #fff;
-  font-size: 1.125rem;
   padding: 10px 20px;
 }
 
@@ -85,7 +96,9 @@ body {
   border-radius: 10px;
 }
 
-.night-light {
-  height: 30px;
+@media (max-width: 900px) {
+  .containerr {
+    width: 100%;
+  }
 }
 </style>

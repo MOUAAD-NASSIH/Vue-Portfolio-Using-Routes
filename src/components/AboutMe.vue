@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <h3>About me</h3>
-    <p>
+    <h3 class="text-black dark:text-[#bdebea]">About me</h3>
+    <p class="text-black dark:text-[#bdebea]">
       The long barrow was built on land previously inhabited in the Mesolithic
       period. It consisted of a sub-rectangular earthen tumulus, estimated to
       have been 15 metres (50 feet) in length, with a chamber built from sarsen
@@ -24,9 +24,8 @@ export default {};
 }
 
 .content h3 {
-  color: #bdebea;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.8px;
   margin-left: 15px;
   padding: 10px 0;
@@ -34,19 +33,21 @@ export default {};
 
 .content p {
   padding: 10px 0;
-  color: #bfe3e3;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 600;
   letter-spacing: 1px;
+  position: relative;
 }
 
 .content p::before {
   content: "";
-  width: 4px;
-  height: 80px;
+  position: absolute;
+  width: 5px;
+  height: 95%;
   border-radius: 4px;
   background: linear-gradient(90deg, #00f5a0 0%, #00d9f5 100%);
-  float: left;
-  margin-right: 10px;
+  left: -20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>

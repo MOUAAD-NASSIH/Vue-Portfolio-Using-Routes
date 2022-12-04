@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <div class="left-content">
-      <h4>Full Stack Developer</h4>
+      <h4 class="text-black dark:text-[#d7e5ec]">Full Stack Developer</h4>
       <h1>Mouad Nassih</h1>
-      <p>
+      <p class="text-black dark:text-[#d7e5ec]">
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit. Exercitation
         veniam consequat sunt.
@@ -21,10 +21,6 @@ export default {};
 </script>
 
 <style scoped>
-:root {
-  --main-bg-color: #041f31;
-}
-
 .content {
   padding: 40px 40px 0 40px;
   margin-bottom: 20px;
@@ -42,9 +38,8 @@ export default {};
 .left-content h4 {
   font-family: "consolas";
   font-size: 1.25rem;
-  font-weight: 200;
+  font-weight: 600;
   padding: 10px 0;
-  color: #d7e5ec;
   letter-spacing: 1px;
 }
 
@@ -61,10 +56,9 @@ export default {};
 
 .left-content p {
   padding: 10px 0;
-  color: #bfe3e3;
   width: 80%;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
@@ -82,10 +76,31 @@ export default {};
 
 .content .right-content {
   width: 90%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.right-content img {
+/* .right-content img {
   position: relative;
   top: 0;
+} */
+
+@media (max-width: 900px) {
+  .content {
+    padding: 20px 20px 0 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content .left-content {
+    padding-left: 0;
+  }
+
+  .left-content p {
+    width: 100%;
+  }
 }
 </style>

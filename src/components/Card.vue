@@ -1,10 +1,12 @@
 <template>
-  <div class="card">
+  <div class="card bg-[#ddd] dark:bg-[#222525] shadow-md">
     <div class="card-img">
       <img :src="projectImg" />
     </div>
     <div class="card-info">
-      <h3 class="card-title">{{ projectTitle }}</h3>
+      <h3 class="card-title text-black dark:text-[#bdebea]">
+        {{ projectTitle }}
+      </h3>
       <div class="tech-used">
         <TechUsed
           :tech1="technologies.tech1"
@@ -12,7 +14,7 @@
           :tech3="technologies.tech3"
         />
       </div>
-      <p>
+      <p class="text-black dark:text-[#bdebea]">
         {{ projectDescription }}
       </p>
     </div>
@@ -44,8 +46,8 @@ export default {
 .card {
   width: 48%;
   margin: 30px 0;
-  background: #222525;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .card-img {
@@ -53,7 +55,7 @@ export default {
 }
 
 .card-img img {
-  max-width: 100%;
+  width: 100%;
   max-height: 375px;
   padding-bottom: 25px;
   cursor: pointer;
@@ -65,7 +67,6 @@ export default {
 }
 
 .card-info .card-title {
-  color: #bdebea;
   font-size: 1.175rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -74,9 +75,14 @@ export default {
 
 .card-info p {
   padding: 15px 0;
-  color: #bfe3e3;
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 90%;
+  }
 }
 </style>
